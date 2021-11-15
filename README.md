@@ -13,13 +13,15 @@ Preliminary data preprocessing was done to remove empty tweets, links, emoticons
 An adjacency list was created on the basis of mentions of other handles in the tweets. The list was then converted to a directed graph.
 Clustering algorithms were applied over this graph to group the handles into several clusters based on who interact with each other very often.
 <img src="https://raw.githubusercontent.com/siddharthkhincha/Twitter-Analysis-GOI/master/graphs/directed_graph_col.png" width ="550" height="500"/>
-
+<br />Used node2vec to convert the directed graph to embedding vectors and applied KMeans algorithm to form clusters on those embedding vectors.
+<img src="https://raw.githubusercontent.com/siddharthkhincha/Twitter-Analysis-GOI/master/graphs/KMeans_Seaborn.png" width="550">
 
 ### Time
+Looked at the different time the handles tweeted at.
 <img src="https://raw.githubusercontent.com/siddharthkhincha/Twitter-Analysis-GOI/master/graphs/finat_tweets_time_default.png" width ="550" height="400" />
 
 ### Hashtags
-A list of all unique hashtags used in the entire dataset was created. There are 21164 unique hashtags.
+Analysed all the different hashtags being used in the dataset as they are a great indicator of which topic each handle tends to tweet about.  Created a list of unique hashtags by using regex to find all the hashtags and maintaining a list of all hashtags encountered until then.There are 21164 unique hashtags.<br />Then created a pandas dataframe with all the hashtags as the rows and the handles as the columns mapping the number of times each hashtag was used by the different handles. This will be useful for later analysis. 
 
 ---
 
